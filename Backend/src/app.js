@@ -12,6 +12,16 @@ app.use(cookieParser())
 
 
 
+import authRouter from './routes/auth.routes.js'
+
+
+
+
+
+
+app.use('/api/auth', authRouter)
+
+
 // Health Route
 app.get('/', (req, res) => {
     res.send("Health Route")
