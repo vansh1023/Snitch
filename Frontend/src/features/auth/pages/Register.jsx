@@ -109,7 +109,7 @@ export default function Register() {
             alt="Luxury fashion"
             className="absolute inset-0 w-full h-full object-cover object-top grayscale"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/60" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/20 to-black/60" />
           <div className="absolute bottom-12 left-10 right-10">
             <p className="text-[10px] tracking-[0.25em] text-[#c9a84c] uppercase mb-3 font-medium">
               The Atelier Collection
@@ -117,7 +117,7 @@ export default function Register() {
             <h2 className="text-white text-5xl font-black uppercase leading-tight tracking-tight">
               Redefine<br />Your Essence
             </h2>
-            <div className="mt-4 w-10 h-[2px] bg-[#c9a84c]" />
+            <div className="mt-4 w-10 h-0.5 bg-[#c9a84c]" />
           </div>
         </div>
 
@@ -211,7 +211,7 @@ export default function Register() {
                 <button
                   type="button"
                   onClick={handleCheckbox}
-                  className={`w-4 h-4 border flex-shrink-0 flex items-center justify-center transition-all duration-200 ${
+                  className={`w-4 h-4 border shrink-0 flex items-center justify-center transition-all duration-200 ${
                     form.isSeller
                       ? "bg-[#c9a84c] border-[#c9a84c]"
                       : "border-[#3a3a3a] bg-transparent hover:border-[#c9a84c]"
@@ -233,7 +233,7 @@ export default function Register() {
               {/* Create Account Button */}
               <button
                 type="submit"
-                className="w-full py-3.5 text-xs font-bold tracking-[0.2em] uppercase text-black bg-gradient-to-r from-[#c9a84c] via-[#e2c46a] to-[#c9a84c] hover:from-[#d4b55a] hover:to-[#d4b55a] transition-all duration-300 hover:shadow-[0_0_24px_rgba(201,168,76,0.3)]"
+                className="w-full py-3.5 text-xs font-bold tracking-[0.2em] uppercase text-black bg-linear-to-r from-[#c9a84c] via-[#e2c46a] to-[#c9a84c] hover:from-[#d4b55a] hover:to-[#d4b55a] transition-all duration-300 hover:shadow-[0_0_24px_rgba(201,168,76,0.3)]"
               >
                 Create Account
               </button>
@@ -277,7 +277,7 @@ export default function Register() {
       </div>
 
       {/* Footer — full width, pinned to bottom */}
-      <footer className="w-full border-t border-[#1c1c1c] bg-[#0e0e0e] px-8 sm:px-14 py-4 flex-shrink-0">
+      <footer className="w-full border-t border-[#1c1c1c] bg-[#0e0e0e] px-8 sm:px-14 py-4 shrink-0">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <p className="text-white text-sm font-bold tracking-[0.2em] uppercase">SNITCH</p>
           <nav className="flex flex-wrap gap-x-6 gap-y-1">
