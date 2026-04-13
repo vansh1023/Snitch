@@ -32,7 +32,7 @@ export async function registerUserController(req, res) {
   try {
     const { fullname, email, contact, password, isSeller } = req.body;
 
-    const isUserAlreadyExists = userModel.findOne({
+    const isUserAlreadyExists = await userModel.findOne({
       $or: [{ email }, { contact }],
     });
 
