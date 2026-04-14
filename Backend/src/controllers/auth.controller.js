@@ -52,7 +52,7 @@ export async function registerUserController(req, res) {
       role: isSeller ? "seller" : "buyer"
     });
 
-    await sendToken(user, res, "User registered successfully")
+    await sendTokenResponse(user, res, "User registered successfully")
     
   } catch (error) {
     console.log(error);
@@ -93,4 +93,11 @@ export async function loginUserController(req, res){
       message: "Server error",
     });
   }
+}
+
+
+
+
+export async function googleCallback(req, res){
+  res.redirect('http://localhost:5173/')
 }
