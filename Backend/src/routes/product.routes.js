@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { authenticateSeller } from '../middlewares/auth.middleware.js'
-import { createProductController } from '../controllers/product.controller.js'
+import { createProductController, getSellerProductsController } from '../controllers/product.controller.js'
 import { createProductValidator } from '../validator/product.validator.js'
 import multer from 'multer'
 
@@ -17,7 +17,12 @@ const productRouter = Router()
 
 
 
-productRouter.post('/', authenticateSeller, createProductValidator , upload.array("images", 7) , createProductController)
+productRouter.post('/', authenticateSeller, upload.array("images", 7) , createProductValidator , createProductController)
+
+
+
+
+productRouter.get('/seller', authenticateSeller, getSellerProductsController)
 
 
 

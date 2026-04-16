@@ -34,3 +34,20 @@ export async function createProductController(req, res){
 
 
 }
+
+
+
+
+
+export async function getSellerProductsController(req, res){
+
+    const seller = req.user
+
+    const products = await productModel.find({seller: seller._id})
+
+    res.status(200).json({
+        message: products.length ? "Products fetched successfully" : "No products found for this seller",
+        success: true,
+        products
+    })
+}
