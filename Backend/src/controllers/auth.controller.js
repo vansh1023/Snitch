@@ -88,6 +88,27 @@ export async function loginUserController(req, res) {
   }
 }
 
+
+export async function getMe(req, res){
+
+  const user = req.user
+
+  res.status(200).json({
+    message: "User fetched successfully",
+    success: true,
+    user: {
+      id: user._id,
+      fullaname: user.fullname,
+      email: user.email,
+      contact: user.contact,
+      role: user.role
+    }
+  })
+
+}
+
+
+
 export async function googleCallback(req, res) {
   const { id, displayName, emails, photos } = req.user;
   const email = emails[0].value;

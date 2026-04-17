@@ -155,7 +155,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await handleRegister({
+    const user = await handleRegister({
       fullname: form.fullName,
       email: form.email,
       password: form.password,
@@ -163,7 +163,11 @@ export default function Register() {
       isSeller: form.isSeller,
     });
 
-    navigate("/");
+    if(user.role === "buyer"){
+      navigate("/");
+    } else if(user.role === "seller"){
+      navigate('/seller/dashboard')
+    }
 
     setForm(initialState);
   };
